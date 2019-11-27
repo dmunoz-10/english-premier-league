@@ -1,0 +1,17 @@
+.fa-heart {
+    color: gray;
+    cursor: pointer;
+}
+
+.fa-heart:hover {
+    color: red;
+}
+
+.fa-trash {
+    color: gray;
+    cursor: pointer;
+}
+
+.fa-trash:hover {
+    color: black;
+}

@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-8">
+    <h2>English Premier League Teams</h2>
+    <div *ngFor="let team of teams.teams">
+      <div class="card mb-3" style="width: 90%;" *ngIf="!isInFavourite(team.idTeam)">
+        <div class="row no-gutters mt-2 mb-2">
+          <div class="col-md-4">
+            <img [src]="team.strTeamBadge" class="card-img" alt="Badge of {{ team.strTeam }}">
+          </div>
+          <div class="col-md-8">
+            <div class="text-right mt-1 mr-3">
+              <span (click)="addToFavourite(team)" class="fas fa-heart fa-2x" title="Add {{ team.strTeam }} to favourites"></span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-bold mb-5" style="color: black">{{ team.strTeam }}</h5>
+              <span (click)="onSelect(team)" class="btn btn-outline-info" title="See more about {{ team.strTeam }}" style="cursor: pointer;">See Details</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4" *ngIf="this.favourite_teams.length > 0">
+    <h2>Your Favourite Teams</h2>
+    <div *ngFor="let team of teams.teams">
+      <div class="card mb-3" style="width: 100%;" *ngIf="isInFavourite(team.idTeam)">
+        <div class="row no-gutters mt-2 mb-2">
+          <div class="col-md-4">
+            <img [src]="team.strTeamBadge" class="card-img" alt="Badge of {{ team.strTeam }}">
+          </div>
+          <div class="col-md-8">
+            <div class="text-right mt-1 mr-3">
+              <span (click)="removeFromFavourite(team)" class="fas fa-trash fa-2x" title="Remove {{ team.strTeam }} from favourites"></span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-bold mb-3" style="color: black">{{ team.strTeam }}</h5>
+              <span (click)="onSelect(team)" class="btn btn-outline-info" title="See more about {{ team.strTeam }}" style="cursor: pointer;">See Details</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

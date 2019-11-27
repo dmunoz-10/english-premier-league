@@ -1,0 +1,11 @@
+.team-details img.team-image-lg {
+    z-index: 0;
+    width: 100%;  
+    margin-bottom: 10px;
+}
+
+.team-image-badge {
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    width: 20%; 
+}
